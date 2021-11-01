@@ -1,0 +1,112 @@
+package LEC11;
+
+public class Subarrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int []arr= {1,2,-6,10,4};
+		printSA(arr);
+		System.out.println();
+		printALLSUM(arr);
+		System.out.println();
+		printALLSUM2(arr);
+		System.out.println();
+		System.out.println(maxSASUM(arr));
+		System.out.println(kandesNUM(arr));
+		
+	}
+	public static void printSA(int []arr) {
+		//int sum=0;
+		for(int i=0;i <arr.length;i++) {
+			for(int j=i;j<arr.length;j++) {
+				for(int k=i;k<=j;k++) {
+					
+					System.out.println(arr[k]+" ");
+					//sum+=k;
+					}
+				System.out.println();
+			}
+		}
+	}
+	public static void printALLSUM(int []arr) {
+		//int sum=0;
+		for(int i=0;i <arr.length;i++) {
+			for(int j=i;j<arr.length;j++) {
+				int sum=0;
+				for(int k=i;k<=j;k++) {
+					sum+=arr[k];
+					
+					//System.out.println(arr[k]+" ");
+					//sum+=k;
+					}
+				System.out.println(sum);
+			}
+			System.out.println();
+		}
+	}
+	public static void printALLSUM2(int []arr) {
+		//int sum=0;
+		for(int i=0;i <arr.length;i++) {
+			int sum=0;
+			for(int j=i;j<arr.length;j++) {
+				//int sum=0;
+//				for(int k=i;k<=j;k++) {
+				 sum+=arr[j];
+//					
+//					//System.out.println(arr[k]+" ");
+//					//sum+=k;
+//					}
+				System.out.println(sum);
+			}
+			//System.out.println();
+		}
+	}
+	public static int maxSASUM(int[]arr) {
+		int max=Integer.MIN_VALUE;
+		for(int i=0;i <arr.length;i++) {
+			int sum=0;
+			for(int j=i;j<arr.length;j++) {
+				//int sum=0;
+//				for(int k=i;k<=j;k++) {
+				 sum+=arr[j];
+				 if(sum>max)
+					 max=sum;
+//					
+//					//System.out.println(arr[k]+" ");
+//					//sum+=k;
+//					}
+				//System.out.println(sum);
+			}
+			//System.out.println();
+		}
+		return max;
+		
+	}
+	 public static int kandesNUM(int []arr){
+	        int max=Integer.MIN_VALUE;
+	        int sum=0;
+	        for(int i=0;i<arr.length;i++){
+	            sum+=arr[i];
+	            if(sum>max){
+	                 max=sum;
+
+	            }
+	            
+
+	            if(sum<0){
+	                sum=0;
+	            }
+	           
+
+	            
+	           
+	        } return max;
+	       // System.out.println(max);
+
+	  }
+	
+	
+	
+	
+
+}
