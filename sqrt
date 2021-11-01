@@ -1,0 +1,33 @@
+package LEC11;
+
+public class Sqrt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(sqrt(36));
+
+	}
+	public static int sqrt(int n) {
+		int si=0;
+		int ei=n;
+		int ans=-1;
+		while(si<=ei) {
+			int mid=(si+ei)/2;
+			//int temp=Math.sqrt(mid);
+			//if(mid*mid<=n) {// next line jo likha hai no need uska uskay bina v same output aayega 
+			if(isItPossible(n,mid)) {
+				ans=mid;
+				si=mid+1;
+			}else {
+				ei=mid-1;
+			}
+			
+			
+		}
+		return ans;
+	}
+	public static boolean isItPossible(int n,int mid) {
+		return mid-mid<=n;
+	}
+
+}
