@@ -1,0 +1,29 @@
+package LEC11;
+
+public class AggressiveCows {
+
+	public static void main(String[] args) {
+		int []stalls= {1,2,4,8,9};
+		int noc=3;
+		int min=2;
+		System.out.println(isItpossible(stalls,noc,min));
+		// TODO Auto-generated method stub
+
+	}
+	public static boolean isItpossible(int[]stalls,int noc,int min) {
+		int n=1;
+		int place=stalls[0];
+		for(int i=1;i<stalls.length;i++) {
+			if(stalls[i]-place>=min) {
+				noc++;
+				place=stalls[i];
+			}
+			if(n>=noc)
+				return true;
+			else
+				return false;
+		}
+		
+	}
+
+}
